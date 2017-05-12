@@ -38,7 +38,9 @@ namespace MoonSharp.Interpreter.Loaders
 		{
 			file = file.Replace('/', '.');
 			file = file.Replace('\\', '.');
-			return m_Namespace + "." + file;
+			file = m_Namespace + "." + file;
+            file = file.Replace('-', '_');
+            return file;
 		}
 
 		/// <summary>
